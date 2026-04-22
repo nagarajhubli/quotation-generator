@@ -224,91 +224,17 @@ input:focus { outline: 1px solid #4a90d9; border-radius: 2px; }
   .customer-field .editable-span { min-height: 44px; display: flex; align-items: center; }
   .customer-field input { min-height: 44px; padding: 0 4px; }
 
-  /* ── Table: card layout ── */
-  .table-wrapper { overflow-x: visible; }
-  .table-wrapper::after { display: none; }
-
-  /* Hide the column header row */
-  .quote-table thead { display: none; }
-
-  /* Table/tbody/tr/td all become block */
-  .quote-table,
-  .quote-table tbody,
-  .quote-table tr { display: block; width: 100%; }
-
-  /* Each item row becomes a card */
-  .quote-table tr.item-row {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 8px 10px;
-    padding: 4px 0;
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  /* ── Table: horizontal scroll ── */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
-
-  /* Each cell becomes a labeled row inside the card */
-  .quote-table tr.item-row td {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    border-bottom: 1px solid #f0f0f0;
-    padding: 0 12px;
-    min-height: 44px;
-    font-size: 13px;
-  }
-  .quote-table tr.item-row td:last-child { border-bottom: none; }
-
-  /* Label from data-label attribute */
-  .quote-table tr.item-row td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    font-size: 11px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    flex-shrink: 0;
-    width: 90px;
-  }
-
-  /* Computed cells get a tinted right side */
-  .quote-table tr.item-row td.cell-computed {
-    background: #f9f9f9;
-    font-weight: 500;
-  }
-  .quote-table tr.item-row td.cell-total {
-    background: #f0f4f0;
-    font-weight: 700;
-    font-size: 14px;
-  }
-
-  /* Hide the # row (redundant on mobile) */
-  .quote-table tr.item-row td.cell-center { display: none; }
-
-  /* Action cell (delete button): right-align, no label */
-  .quote-table tr.item-row td.cell-action {
-    justify-content: flex-end;
-    border-bottom: none;
-    min-height: 36px;
-    padding: 4px 8px;
-  }
-  .quote-table tr.item-row td.cell-action::before { display: none; }
-
-  /* Section title row: full-width header band */
-  .quote-table tr.section-title-row { display: flex; align-items: stretch; margin: 16px 0 0; border-radius: 0; }
-  .quote-table tr.section-title-row td { display: none; border: none; background: #1a1a1a; color: #fff; font-size: 12px; }
-  .quote-table tr.section-title-row td.section-title-cell { display: flex; align-items: center; flex: 1; padding: 10px 12px; min-height: 44px; }
-  .quote-table tr.section-title-row td.section-title-cell .editable-span,
-  .quote-table tr.section-title-row td.section-title-cell input { color: #fff; background: transparent; }
-  .quote-table tr.section-title-row td.cell-action { display: flex; align-items: center; justify-content: center; padding: 0 8px; min-height: unset; }
-
-  /* Add row button row */
-  .quote-table tr.add-row-tr { display: block; margin: 4px 10px 8px; }
-  .quote-table tr.add-row-tr td { display: block; border: none; padding: 4px 0; }
-
-  /* Editable fields inside cards fill remaining space */
-  .quote-table tr.item-row td .editable-span,
-  .quote-table tr.item-row td input { flex: 1; text-align: right; min-height: 44px; display: flex; align-items: center; justify-content: flex-end; }
+  .quote-table { font-size: 11px; min-width: 680px; }
+  .quote-table th { font-size: 9.5px; padding: 4px 2px; }
+  .quote-table td { padding: 0; }
+  .quote-table td .editable-span,
+  .quote-table td input { min-height: 36px; display: flex; align-items: center; padding: 0 4px; }
+  .quote-table td.cell-computed { padding: 0 5px; line-height: 36px; }
 
   /* Bigger touch targets for all buttons */
   .btn-add-row { min-height: 44px; padding: 0 16px; font-size: 13px; width: 100%; display: flex; align-items: center; justify-content: center; }

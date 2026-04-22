@@ -1,6 +1,10 @@
 /* ─── Reset & base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
   font-size: 12px;
@@ -291,13 +295,12 @@ input:focus { outline: 1px solid #4a90d9; border-radius: 2px; }
   .quote-table tr.item-row td.cell-action::before { display: none; }
 
   /* Section title row: full-width header band */
-  .quote-table tr.section-title-row { display: flex; align-items: center; margin: 16px 0 0; border-radius: 0; }
-  .quote-table tr.section-title-row td { display: block; border: none; padding: 8px 12px; background: #1a1a1a; color: #fff; font-size: 12px; }
-  .quote-table tr.section-title-row td.section-title-cell { flex: 1; }
+  .quote-table tr.section-title-row { display: flex; align-items: stretch; margin: 16px 0 0; border-radius: 0; }
+  .quote-table tr.section-title-row td { display: none; border: none; background: #1a1a1a; color: #fff; font-size: 12px; }
+  .quote-table tr.section-title-row td.section-title-cell { display: flex; align-items: center; flex: 1; padding: 10px 12px; min-height: 44px; }
   .quote-table tr.section-title-row td.section-title-cell .editable-span,
   .quote-table tr.section-title-row td.section-title-cell input { color: #fff; background: transparent; }
-  .quote-table tr.section-title-row td.cell-action { background: #1a1a1a; min-height: unset; padding: 8px 10px; }
-  .quote-table tr.section-title-row td:not(.section-title-cell):not(.cell-action) { display: none; }
+  .quote-table tr.section-title-row td.cell-action { display: flex; align-items: center; justify-content: center; padding: 0 8px; min-height: unset; }
 
   /* Add row button row */
   .quote-table tr.add-row-tr { display: block; margin: 4px 10px 8px; }

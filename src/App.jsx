@@ -160,16 +160,16 @@ function ItemRow({ row, rowNum, sectionId, updateRow, removeRow, canRemove }) {
 
   return (
     <tr className="item-row">
-      <td className="cell-center">{rowNum}</td>
-      <td><EditableField value={row.description} onChange={v => upd('description', v)} placeholder="Description" /></td>
-      <td className="cell-right"><EditableField value={row.qty} onChange={v => upd('qty', v)} align="right" placeholder="0" /></td>
-      <td className="cell-right"><EditableField value={row.rate} onChange={v => upd('rate', v)} align="right" placeholder="0" /></td>
-      <td className="cell-computed">{fmt(total)}</td>
-      <td className="cell-right"><EditableField value={row.lessDis} onChange={v => upd('lessDis', v)} align="right" placeholder="0" /></td>
-      <td className="cell-computed">{fmt(discountAmt)}</td>
-      <td className="cell-right"><EditableField value={row.gst} onChange={v => upd('gst', v)} align="right" placeholder="0" /></td>
-      <td className="cell-computed cell-total">{fmt(finalTotal)}</td>
-      <td><EditableField value={row.fabricDetails} onChange={v => upd('fabricDetails', v)} placeholder="Fabric" /></td>
+      <td className="cell-center" data-label="#">{rowNum}</td>
+      <td data-label="Description"><EditableField value={row.description} onChange={v => upd('description', v)} placeholder="Description" /></td>
+      <td className="cell-right" data-label="Qty"><EditableField value={row.qty} onChange={v => upd('qty', v)} align="right" placeholder="0" /></td>
+      <td className="cell-right" data-label="Rate"><EditableField value={row.rate} onChange={v => upd('rate', v)} align="right" placeholder="0" /></td>
+      <td className="cell-computed" data-label="Total">{fmt(total)}</td>
+      <td className="cell-right" data-label="Discount %"><EditableField value={row.lessDis} onChange={v => upd('lessDis', v)} align="right" placeholder="0" /></td>
+      <td className="cell-computed" data-label="Disc Amt">{fmt(discountAmt)}</td>
+      <td className="cell-right" data-label="GST %"><EditableField value={row.gst} onChange={v => upd('gst', v)} align="right" placeholder="0" /></td>
+      <td className="cell-computed cell-total" data-label="Final Total">{fmt(finalTotal)}</td>
+      <td data-label="Fabric"><EditableField value={row.fabricDetails} onChange={v => upd('fabricDetails', v)} placeholder="Fabric" /></td>
       <td className="cell-action no-print">
         {canRemove && (
           <button className="btn-icon btn-danger" onClick={() => removeRow(sectionId, row.id)} title="Remove row">×</button>

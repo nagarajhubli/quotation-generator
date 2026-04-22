@@ -1,0 +1,228 @@
+/* ─── Reset & base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #111;
+  background: #e8e8e8;
+}
+
+/* ─── App shell ────────────────────────────────────────────────────────────── */
+.app {
+  max-width: 1050px;
+  margin: 16px auto;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding-bottom: 24px;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────────── */
+.quote-header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 14px 20px 10px;
+  text-align: center;
+}
+.company-logo { max-height: 72px; max-width: 340px; object-fit: contain; margin-bottom: 6px; display: block; margin-left: auto; margin-right: auto; }
+.company-tagline { font-size: 11px; color: #ccc; letter-spacing: 0.5px; margin-bottom: 4px; }
+.company-address { font-size: 11px; }
+.company-address input, .company-address .editable-span { color: #fff; font-size: 11px; background: transparent; border: none; outline: none; }
+
+/* ─── Customer grid ────────────────────────────────────────────────────────── */
+.customer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid #1a1a1a;
+}
+.customer-col { padding: 8px 14px; border-right: 1px solid #ccc; }
+.customer-col:last-child { border-right: none; }
+.customer-field { display: flex; align-items: baseline; gap: 4px; margin-bottom: 3px; font-size: 11.5px; }
+.customer-label { font-weight: 700; white-space: nowrap; font-size: 11px; }
+.customer-colon { flex-shrink: 0; }
+.customer-field .editable-span { flex: 1; border-bottom: 1px dotted #bbb; min-width: 80px; }
+.customer-field input { flex: 1; border: none; border-bottom: 1px solid #888; outline: none; min-width: 80px; font-size: 11.5px; }
+
+/* ─── Table wrapper ────────────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; }
+
+/* ─── Quote table ──────────────────────────────────────────────────────────── */
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 11.5px;
+}
+
+.quote-table th {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 5px 3px;
+  text-align: center;
+  font-size: 10.5px;
+  border: 1px solid #444;
+  vertical-align: middle;
+}
+
+.quote-table td {
+  border: 1px solid #d0d0d0;
+  padding: 2px 4px;
+  vertical-align: middle;
+}
+
+/* ─── Section title row ────────────────────────────────────────────────────── */
+.section-title-row td {
+  background: #f0f0f0;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 6px;
+  border-top: 2px solid #999;
+}
+.section-title-cell .editable-span,
+.section-title-cell input {
+  font-weight: 700;
+  font-size: 11px;
+  width: 100%;
+}
+
+/* ─── Cell variants ────────────────────────────────────────────────────────── */
+.cell-center { text-align: center; color: #555; font-size: 10px; }
+.cell-right .editable-span, .cell-right input { text-align: right; }
+.cell-right { text-align: right; }
+.cell-computed { background: #f9f9f9; text-align: right; padding-right: 5px; color: #222; }
+.cell-total { font-weight: 600; background: #f0f4f0; }
+.cell-action { text-align: center; padding: 0 2px; }
+
+/* ─── Editable span ────────────────────────────────────────────────────────── */
+.editable-span {
+  display: block;
+  cursor: text;
+  min-height: 16px;
+  padding: 1px 2px;
+  border-radius: 2px;
+  transition: background 0.1s;
+}
+.editable-span:hover { background: #f0f7ff; }
+.placeholder { color: #bbb; font-style: italic; }
+
+input:focus { outline: 1px solid #4a90d9; border-radius: 2px; }
+
+/* ─── Add row/section buttons ──────────────────────────────────────────────── */
+.add-row-tr td { border: none; padding: 2px 6px; background: #fff; }
+.btn-add-row {
+  font-size: 10px; color: #555; background: none; border: 1px dashed #bbb;
+  border-radius: 3px; padding: 1px 8px; cursor: pointer;
+}
+.btn-add-row:hover { background: #f0f7ff; border-color: #4a90d9; color: #4a90d9; }
+
+.btn-add-section {
+  font-size: 11px; color: #4a90d9; background: none; border: 1px dashed #4a90d9;
+  border-radius: 3px; padding: 3px 14px; cursor: pointer; margin: 4px 6px;
+}
+.btn-add-section:hover { background: #f0f7ff; }
+
+/* ─── Icon buttons ─────────────────────────────────────────────────────────── */
+.btn-icon {
+  background: none; border: none; cursor: pointer;
+  font-size: 14px; line-height: 1; padding: 0 2px; border-radius: 3px;
+}
+.btn-danger { color: #cc3333; }
+.btn-danger:hover { background: #ffeaea; }
+
+/* ─── Footer row ───────────────────────────────────────────────────────────── */
+.footer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-top: 2px solid #1a1a1a;
+}
+
+.footer-notes {
+  flex: 1;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #444;
+}
+.footer-notes textarea {
+  width: 100%;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 4px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ─── Footer totals ────────────────────────────────────────────────────────── */
+.footer-totals { flex-shrink: 0; }
+.footer-totals table { border-collapse: collapse; min-width: 260px; }
+.footer-totals td { padding: 3px 6px; font-size: 12px; }
+.totals-label { font-weight: 600; text-align: right; white-space: nowrap; }
+.totals-colon { text-align: center; padding: 0 4px; }
+.totals-value { text-align: right; min-width: 90px; }
+.totals-value .editable-span { display: inline-block; min-width: 60px; }
+.totals-value input { text-align: right; border: none; border-bottom: 1px solid #888; outline: none; width: 90px; font-size: 12px; }
+
+.grand-total-row td { border-top: 2px solid #1a1a1a; border-bottom: 2px solid #1a1a1a; font-weight: 700; font-size: 13px; }
+.balance-row td { font-weight: 700; border-top: 1px solid #aaa; }
+
+/* ─── Signature row ────────────────────────────────────────────────────────── */
+.signature-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 20px 10px;
+  border-top: 1px solid #ccc;
+  margin-top: 8px;
+}
+.sig-block { min-width: 120px; }
+.sig-line { border-bottom: 1px solid #333; height: 32px; width: 120px; margin: 0 auto 4px; }
+.sig-label { font-size: 11px; font-weight: 600; text-align: center; }
+
+/* ─── Print button ─────────────────────────────────────────────────────────── */
+.btn-print {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+.btn-print:hover { background: #333; }
+
+/* ─── Print styles ─────────────────────────────────────────────────────────── */
+@media print {
+  @page { size: A4 landscape; margin: 8mm; }
+
+  body { background: #fff; font-size: 10px; }
+
+  .app { max-width: 100%; margin: 0; box-shadow: none; padding-bottom: 0; }
+
+  .no-print { display: none !important; }
+
+  .quote-header,
+  .quote-table th,
+  .section-title-row td {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .editable-span { cursor: default !important; background: transparent !important; }
+  .editable-span:hover { background: transparent !important; }
+
+  .btn-print { display: none; }
+
+  .table-wrapper { overflow: visible; }
+
+  .footer-row { page-break-inside: avoid; }
+  .signature-row { page-break-inside: avoid; }
+}

@@ -199,6 +199,70 @@ input:focus { outline: 1px solid #4a90d9; border-radius: 2px; }
 }
 .btn-print:hover { background: #333; }
 
+/* ─── Mobile responsive ────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  body { font-size: 13px; }
+
+  .app { margin: 0; box-shadow: none; padding-bottom: 80px; }
+
+  /* Header */
+  .quote-header { padding: 12px 12px 8px; }
+  .company-logo { max-height: 56px; max-width: 240px; }
+  .company-tagline { font-size: 10px; }
+  .company-address { font-size: 10px; }
+
+  /* Customer grid: stack into single column */
+  .customer-grid { grid-template-columns: 1fr; }
+  .customer-col { border-right: none; border-bottom: 1px solid #e0e0e0; padding: 8px 12px; }
+  .customer-col:last-child { border-bottom: none; }
+  .customer-field { font-size: 13px; }
+  .customer-label { min-width: 110px; }
+
+  /* Table: horizontal scroll with fade hint */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  .table-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 24px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.06));
+    pointer-events: none;
+  }
+  .quote-table { font-size: 11px; min-width: 680px; }
+  .quote-table th { font-size: 9.5px; padding: 4px 2px; }
+
+  /* Footer: stack notes above totals */
+  .footer-row { flex-direction: column; gap: 16px; padding: 12px; }
+  .footer-totals { width: 100%; }
+  .footer-totals table { width: 100%; min-width: unset; }
+  .totals-value { min-width: unset; }
+  .totals-value input { width: 100%; }
+
+  /* Signature row: 2×2 grid */
+  .signature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 12px;
+    padding: 20px 12px 12px;
+  }
+  .sig-block:first-child { grid-column: 1 / -1; }
+  .sig-line { width: 100%; }
+
+  /* Print button: full width at bottom */
+  .btn-print {
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 14px;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
 /* ─── Print styles ─────────────────────────────────────────────────────────── */
 @media print {
   @page { size: A4 landscape; margin: 8mm; }

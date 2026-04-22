@@ -231,7 +231,7 @@ function QuoteTable({ sections, updateRow, removeRow, removeSection, addRow, upd
           <col style={{ width: 44 }} />
           <col style={{ width: 80 }} />
           <col style={{ width: 110 }} />
-          <col style={{ width: 28 }} />
+          <col style={{ width: 44 }} />
         </colgroup>
         <thead>
           <tr>

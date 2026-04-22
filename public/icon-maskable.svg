@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Full bleed dark background (maskable — no rounded corners) -->
+  <rect width="512" height="512" fill="#1a1a1a"/>
+
+  <!-- Content fits within safe zone: 40% inset = 102px each side, so 308x308 centred -->
+  <circle cx="256" cy="240" r="130" fill="none" stroke="#c8a96e" stroke-width="5"/>
+  <circle cx="256" cy="240" r="118" fill="none" stroke="#c8a96e" stroke-width="1.2" opacity="0.45"/>
+
+  <text
+    x="256" y="308"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="150"
+    font-weight="700"
+    fill="#c8a96e"
+    text-anchor="middle"
+    dominant-baseline="auto"
+    letter-spacing="-3">M</text>
+
+  <text
+    x="256" y="400"
+    font-family="'Arial', sans-serif"
+    font-size="22"
+    font-weight="600"
+    fill="#a08050"
+    text-anchor="middle"
+    letter-spacing="5">INSIDEZ</text>
+</svg>
